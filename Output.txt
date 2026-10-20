@@ -1,0 +1,28 @@
+Welcome to Hello World
+===================
+Max Slot: 10
+Menu
+===================
+1. Burger: $8.5
+2. Pizza: $18.55
+3. Sandwich: $10.5
+4. Soft Drink: $2.5
+5. Combo (Burger & Drinks): $11
+6. Salad: $10.75
+===================
+Waiting Line 
+3 in Line
+===================
+1. Name: Annie(ID:An4) - 4 People.
+2. Name: Harry(ID:Ha4) - 3 People.
+3. Name: Jane(ID:Ja1) - 1 People.
+Customer: Annie(ID:An4) Already Exists!
+Customer: John(ID:Jo5) Added Successfully!
+Calling Customer: Annie(ID:An4)
+===================
+Waiting Line 
+3 in Line
+===================
+1. Name: Harry(ID:Ha4) - 3 People.
+2. Name: Jane(ID:Ja1) - 1 People.
+3. Name: John(ID:Jo5) - 5 People.
