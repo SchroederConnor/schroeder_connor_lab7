@@ -30,11 +30,12 @@ double MenuItem::getPrice(){
 
 
 MenuItem MenuItem:: operator+(const MenuItem& rhs){
-    //implement this method
-    // You may reuse the implementations from Lab 4 if needed.
+    double sum = price + rhs.price;
+    MenuItem m("N/A", sum);
+    return m;
 }
 
 ostream& operator<<(ostream& out,  const MenuItem& rhs) {
-    //implement this method
-    // You may reuse the implementations from Lab 4 if needed.
+    cout << rhs.name << ": $" << rhs.price << endl;
+    return out;
 }

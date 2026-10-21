@@ -77,7 +77,18 @@ Restaurant& Restaurant::operator=(const Restaurant& rh)
 }
 
 //implement << operator overload
-
+ostream& operator<<(ostream& os, const Restaurant& rh)
+{
+    cout << "Welcome to " << rh.name << endl;
+    cout << "===================" << endl;
+    cout << "Max Slot: " << rh.maxItem << endl;
+    cout << "Menu" << endl << "===================" << endl;
+    for(int i = 0; i < rh.maxItem; i++)
+    {
+        cout << i + 1 << ". " << rh.items[i] << endl;
+    }
+    return os;
+}
 
 //implement destructor
 Restaurant::~Restaurant()
