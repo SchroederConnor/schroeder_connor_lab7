@@ -10,7 +10,7 @@ Menu
 5. Combo (Burger & Drinks): $11
 6. Salad: $10.75
 ===================
-Waiting Line 
+Waiting Line
 3 in Line
 ===================
 1. Name: Annie(ID:An4) - 4 People.
@@ -20,7 +20,7 @@ Customer: Annie(ID:An4) Already Exists!
 Customer: John(ID:Jo5) Added Successfully!
 Calling Customer: Annie(ID:An4)
 ===================
-Waiting Line 
+Waiting Line
 3 in Line
 ===================
 1. Name: Harry(ID:Ha4) - 3 People.
