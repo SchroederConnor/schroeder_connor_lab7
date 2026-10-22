@@ -16,9 +16,11 @@ class Restaurant{
         Restaurant(const Restaurant&);
 
         //getters and setters
+        string getName();
         int getNumItem();
         int getMaxItem();
         MenuItem* getItems();
+        void setName(string);
 
         //adder
         void addItem(MenuItem);

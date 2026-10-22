@@ -32,9 +32,11 @@ Restaurant::Restaurant(const Restaurant& rh)
 }
 
 //implement all the getters/setters
+string Restaurant::getName() {return name;}
 int Restaurant::getNumItem() {return numItem;}
 int Restaurant::getMaxItem() {return maxItem;}
 MenuItem* Restaurant::getItems() {return items;}
+void Restaurant::setName(string n) {name = n;}
 
 //implement addItem method
 void Restaurant::addItem(MenuItem mI){

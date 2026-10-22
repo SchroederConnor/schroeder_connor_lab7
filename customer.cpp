@@ -41,7 +41,7 @@ void Customer::setNext(Customer* temp) {next = temp;}
 //overloaded Operators
 ostream& operator<<(ostream& os, const Customer& rh)
 {
-    cout << "Name: " << rh.name << "(" << "ID:" << ") - " << rh.partySize << " People." << endl;
+    cout << "Name: " << rh.name << "(ID:" << rh.ID << ") - " << rh.partySize << " People." << endl;
     return os;
 }
 Customer& Customer::operator=(const Customer& rh)

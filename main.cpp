@@ -59,42 +59,47 @@ int main(){
 
     //TODO step 1:Dynaically create a Customer object named Annie using the parameterized constructor.
     // Passing "Annie" as the name, "An4" as ID, 4 as partySize and NULL as next pointer.
-
+    Customer* Annie = new Customer("Annie", "An4", 4, nullptr);
 
     //TODO step 2:Dynaically create a Customer object named Harry using the parameterized constructor.
     // Passing "Harry" as the name, "Ha4" as ID, 3 as partySize and NULL as next pointer.
+    Customer* Harry = new Customer("Harry", "Ha4", 3, nullptr);
 
     //TODO step 3:Dynaically create a Customer object named Jane using the parameterized constructor.
     // Passing "Jane" as the name, "Ja1" as ID, 1 as partySize and NULL as next pointer.
+    Customer* Jane = new Customer("Jane", "Ja1", 1, nullptr);
 
     //TODO step 4:Set Annie's next pointer to Harry using the setNext method
-    
+    Annie->setNext(Harry);
     
     //TODO step 5:Set Harry's next pointer to Jane using the setNext method
+    Harry->setNext(Jane);
 
     //TODO step 6: Create a WaitingLine object named line using the parameterized constructor
     //Pass 3 as number of customer, Annie as first and Jane as last
-
+    WaitingLine line(3, Annie, Jane);
 
     //TODO step 7: display the waiting line information using the insertion operator overload method for the WaitingLine class
+    cout << line;
 
     //TODO step 8: add customer Annie using the addCustomer() method 
     //pass *Annie as parameter for this method
+    line.addCustomer(*Annie);
 
     //TODO step 9: Dynaically create a Customer object named John using the parameterized constructor.
     // Passing "John" as the name, "Jo5" as ID, 5 as partySize and NULL as next pointer.
+    Customer* John = new Customer("John", "Jo5", 5, nullptr);
 
     //TODO step 10: add customer John using the addCustomer() method 
     //pass *John as parameter for this method
+    line.addCustomer(*John);
 
     //TODO step 11: removing the first person from the waiting list
+    line.removeCustomer(*Annie);
 
     //TODO step 12: display the waiting line information using the insertion operator overload method for the WaitingLine class
-
+    cout << line;
     
-    
-    
-  
      // Your output must match Output.txt exactly.
     // Pay close attention to spelling, capitalization, spaces, and newlines.
     
