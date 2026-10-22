@@ -57,17 +57,19 @@ int main(){
     restaurant + salad;
     cout << restaurant;
 
+
+
     //TODO step 1:Dynaically create a Customer object named Annie using the parameterized constructor.
     // Passing "Annie" as the name, "An4" as ID, 4 as partySize and NULL as next pointer.
-    Customer* Annie = new Customer("Annie", "An4", 4, nullptr);
+    Customer* Annie = new Customer("Annie", "An4", 4, NULL);
 
     //TODO step 2:Dynaically create a Customer object named Harry using the parameterized constructor.
     // Passing "Harry" as the name, "Ha4" as ID, 3 as partySize and NULL as next pointer.
-    Customer* Harry = new Customer("Harry", "Ha4", 3, nullptr);
+    Customer* Harry = new Customer("Harry", "Ha4", 3, NULL);
 
     //TODO step 3:Dynaically create a Customer object named Jane using the parameterized constructor.
     // Passing "Jane" as the name, "Ja1" as ID, 1 as partySize and NULL as next pointer.
-    Customer* Jane = new Customer("Jane", "Ja1", 1, nullptr);
+    Customer* Jane = new Customer("Jane", "Ja1", 1, NULL);
 
     //TODO step 4:Set Annie's next pointer to Harry using the setNext method
     Annie->setNext(Harry);
@@ -88,14 +90,14 @@ int main(){
 
     //TODO step 9: Dynaically create a Customer object named John using the parameterized constructor.
     // Passing "John" as the name, "Jo5" as ID, 5 as partySize and NULL as next pointer.
-    Customer* John = new Customer("John", "Jo5", 5, nullptr);
+    Customer* John = new Customer("John", "Jo5", 5, NULL);
 
     //TODO step 10: add customer John using the addCustomer() method 
     //pass *John as parameter for this method
     line.addCustomer(*John);
 
     //TODO step 11: removing the first person from the waiting list
-    line.removeCustomer(*Annie);
+    line.removeCustomer();
 
     //TODO step 12: display the waiting line information using the insertion operator overload method for the WaitingLine class
     cout << line;

@@ -47,7 +47,7 @@ void Restaurant::addItem(MenuItem mI){
     {
         maxItem += 5;
         MenuItem *temp = new MenuItem[maxItem];
-        for(int i = 0; i < maxItem; i++)
+        for(int i = 0; i < numItem; i++)
         {
             temp[i] = items[i];
         }
@@ -85,9 +85,9 @@ ostream& operator<<(ostream& os, const Restaurant& rh)
     cout << "===================" << endl;
     cout << "Max Slot: " << rh.maxItem << endl;
     cout << "Menu" << endl << "===================" << endl;
-    for(int i = 0; i < rh.maxItem; i++)
+    for(int i = 0; i < rh.numItem; i++)
     {
-        cout << i + 1 << ". " << rh.items[i] << endl;
+        cout << i + 1 << ". " << rh.items[i];
     }
     return os;
 }

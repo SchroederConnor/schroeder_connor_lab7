@@ -27,7 +27,7 @@ class WaitingLine
         bool checkCustomer(Customer&);
 
         void addCustomer(Customer&);
-        void removeCustomer(Customer&);
+        void removeCustomer();
 
         friend ostream& operator<<(ostream&, const WaitingLine&);
         WaitingLine& operator=(const WaitingLine&);

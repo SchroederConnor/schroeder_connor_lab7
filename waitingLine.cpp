@@ -14,6 +14,7 @@ WaitingLine::WaitingLine(int n, Customer* f, Customer* l)
         numCustomer = 0;
         first = NULL;
         last = NULL;
+        return;
     }
     numCustomer = n;
     Customer* temp = f;
@@ -30,6 +31,8 @@ WaitingLine::WaitingLine(int n, Customer* f, Customer* l)
         last->setNext(new Customer);
         last = last->getNext();
         last->setName(temp->getName());
+        last->setID(temp->getID());
+        last->setSize(temp->getSize());
         last->setNext(NULL);
         temp = temp->getNext();
     }
@@ -59,13 +62,13 @@ WaitingLine::WaitingLine(const WaitingLine& rhs)
 WaitingLine::~WaitingLine()
 {
     Customer* temp = first;
-    while(temp != nullptr){
+    while(temp != NULL){
         Customer* toDelete = temp;
         temp = temp->getNext();
         delete toDelete;
     }
-    first = nullptr;
-    last = nullptr;
+    first = NULL;
+    last = NULL;
 }
 
 //getters
@@ -84,7 +87,7 @@ void WaitingLine::setLast(Customer* l) {last = l;}
 //add customer
 void WaitingLine::addCustomer(Customer& rh)
 {
-    if(!checkCustomer(rh))
+    if(checkCustomer(rh))
     {
         cout << "Customer: " << rh.getName() << "(ID:" << rh.getID() << ") Already Exists!" << endl;
         return;
@@ -94,9 +97,9 @@ void WaitingLine::addCustomer(Customer& rh)
     cust->setName(rh.getName());
     cust->setID(rh.getID());
     cust->setSize(rh.getSize());
-    cust->setNext(nullptr);
+    cust->setNext(NULL);
 
-    if(first == nullptr)
+    if(first == NULL)
     {
         first = cust;
         last = first;
@@ -111,21 +114,21 @@ void WaitingLine::addCustomer(Customer& rh)
 }
 
 //remove customer
-void WaitingLine::removeCustomer(Customer& rh)
+void WaitingLine::removeCustomer()
 {
-    if(numCustomer == 0 || first == nullptr)
+    if(numCustomer == 0 || first == NULL)
     {
         cout << "The waiting line is empty." << endl;
         return;
     }
-    cout << "Calling Customer: " << rh.getName() << "(ID:" << rh.getID() << ")" << endl;
+    cout << "Calling Customer: " << first->getName() << "(ID:" << first->getID() << ")" << endl;
     Customer* temp = first;
     first = first->getNext();
     delete temp;
     numCustomer--;
-    if(numCustomer == 0 || first == nullptr)
+    if(numCustomer == 0 || first == NULL)
     {
-        last = nullptr;
+        last = NULL;
     }
 }
 
@@ -133,7 +136,7 @@ void WaitingLine::removeCustomer(Customer& rh)
 bool WaitingLine::checkCustomer(Customer& rh)
 {
     Customer* temp = first;
-    while(temp != nullptr)
+    while(temp != NULL)
     {
         if(temp->getID() == rh.getID())
         {
@@ -149,14 +152,14 @@ ostream& operator<<(ostream& os, const WaitingLine& rh)
 {
     Customer* temp = rh.first;
     int count = 1;
-    if(temp != nullptr)
+    if(temp != NULL)
     {
         cout << "===================" << endl << "Waiting Line" << endl;
         cout << rh.numCustomer << " in Line" << endl << "===================" << endl;
     }
-    while(temp != nullptr)
+    while(temp != NULL)
     {
-        cout << count << ". " << temp;
+        cout << count << ". " << *temp;
         count++;
         temp = temp->getNext();
     }
@@ -167,13 +170,13 @@ WaitingLine& WaitingLine::operator=(const WaitingLine& wl)
     Customer* temp = wl.first;
     first =last= new Customer;
     first->setName(temp->getName());
-    first->setNext(nullptr);
+    first->setNext(NULL);
     temp = temp->getNext();
-    while(temp!= nullptr){
+    while(temp!= NULL){
         last->setNext(new Customer);
         last = last->getNext();
         last->setName(temp->getName());
-        last->setNext(nullptr);
+        last->setNext(NULL);
         temp = temp->getNext();
     }
     return *this;
